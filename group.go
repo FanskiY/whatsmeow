@@ -576,7 +576,7 @@ func parseParticipant(childAG *waBinary.AttrUtility, child *waBinary.Node) types
 	participant := types.GroupParticipant{
 		IsAdmin:      pcpType == "admin" || pcpType == "superadmin",
 		IsSuperAdmin: pcpType == "superadmin",
-		JID:          childAG.JID("jid"),
+		JID:          childAG.JID("phone_number"),
 		LID:          childAG.OptionalJIDOrEmpty("lid"),
 		DisplayName:  childAG.OptionalString("display_name"),
 	}
