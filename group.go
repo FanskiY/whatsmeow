@@ -577,7 +577,7 @@ func parseParticipant(childAG *waBinary.AttrUtility, child *waBinary.Node) types
 		IsAdmin:      pcpType == "admin" || pcpType == "superadmin",
 		IsSuperAdmin: pcpType == "superadmin",
 		JID:          childAG.JID("phone_number"),
-		LID:          childAG.OptionalJIDOrEmpty("lid"),
+		LID:          childAG.OptionalJIDOrEmpty("jid"),
 		DisplayName:  childAG.OptionalString("display_name"),
 	}
 	if participant.JID.Server == types.HiddenUserServer && participant.LID.IsEmpty() {
